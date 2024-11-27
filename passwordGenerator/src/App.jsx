@@ -87,11 +87,37 @@ function App() {
           type= "number" name='length' min={4} max={50} defaultValue={passwordLength} onChange={(e) => setPasswordlength(e.target.value)}>
           </input>
         </div>
+
+        <div className='option'>
+          <label>Include Uppercase Letters</label>
+          <input type='checkbox' name='Uppercase' defaultChecked = {upperCase} onChange={(e) => setUppercase(e.target.checked)}></input>
+        </div>
+
+        <div className='option'>
+          <label>Include lowercase letters</label>
+          <input type='checkbox' name='Lowercase' defaultChecked= {lowerCase} onChange={(e) => setLowercase(e.target.checked)}></input>
+        </div>
+
+        <div className='option'>
+        <label>Include Numbers</label>
+        <input type='checkbox' name='Numbers' defaultChecked={numbers} onChange={(e) => setNumbers(e.target.checked)}></input>
+      </div>
+
+      <div className='option'>
+        <label>Include symbol</label>
+        <input type='checkbox' name='Symbols' defaultChecked={symbols} onChange={(e) => setSymbols(e.target.checked)}></input>
+
+      </div>
+
+      <div>
+        {error.length && <div className='erorr'> {error}</div>}
+      </div>
+      <div  className='button'>
+        <input type = "submit" name = "generate" value="Generate" onClick={generatePassword}></input>
+
+      </div>
       </div>
     </div>
-  
-    
-     
     </>
   )
 }
