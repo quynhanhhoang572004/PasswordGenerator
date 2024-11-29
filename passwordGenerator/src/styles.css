@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:   monospace, cursive, Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #ffb6c1;
+}
+span {
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+.app {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+.password {
+    background-color: white;
+    color: rgb(99, 99, 99);
+    width: 50%;
+    height: 3rem;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+.copy{
+    position: absolute;
+  right: 5px;
+  top: auto;
+  background: #89cff0;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 5px;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subContainer {
+    width: 60%;
+    padding: 20px;
+    color: white;
+    margin: 20px;
+    text-align: left;
+    font-size: 1.2rem;
+    
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .option {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  input[type="number"],
+select {
+  background-color: #89cff0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid pink;
+  padding: 5px;
+  margin: 0px;
+  outline: none;
+  border-radius: 8px;
+  color: rgb(240, 99, 240);
+}
+input[type="number"]:focus,
+select:focus {
+  -moz-box-shadow: 0 0 8px #88d5e9;
+  -webkit-box-shadow: 0 0 8px #88d5e9;
+  box-shadow: 0 0 8px #88d5e9;
+  border: 1px solid dodgerblue;
+}
+
+input[type="checkbox"],
+select {
+  width: 20px;
+  height: 20px;
+}
+
+.button {
+  margin-top: 30px;
+  text-align: center;
+}
+
+input[type="submit"] {
+  background: #88d5e9;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+}
+
+.error {
+  color: palevioletred;
+  font-size: 3.5vh;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+}
+
+
+

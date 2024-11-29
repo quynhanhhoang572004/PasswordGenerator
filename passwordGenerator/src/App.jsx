@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import "./styles.css";
 
 function App() {
   const [password, setPassword] = useState("")
@@ -14,40 +15,42 @@ function App() {
 
   const generatePassword = () => {
     setError({});
-    if(!upperCase && !lowerCase && !symbols){
+
+    if(!upperCase && !lowerCase && !symbols && !numbers){
       return setError("The password is not valid")
     }
-    if(passwordLength === "0"){
+    else if(passwordLength <= 0){
       return setError(" The password length cannot be zero")
     }
-    if(passwordLength === "")
-      return setError(" The password length cannot be empty")
+    else if(passwordLength === ""){
+      return setError(" The password length cannot be empty")}
   
-    if(passwordLength === "30")
-      return setError("The password can not be exceed to 30 characters")
+    else if(passwordLength >= 30){
+      setPassword("");
+      return setError("The password can not be exceed to 30 characters") }
 
-    let password = ""
+    let password = "";
     for(let i =0; i<passwordLength; i++){
       let choice = random(0,3)
-      if(lowerCase && choice == 0){
-        password += randomLower()
+      if(lowerCase && choice === 0){
+        password += randomLower();
       }
-      else if (upperCase && choice == 1){
-        password += randomUpper()
+      else if (upperCase && choice === 1){
+        password += randomUpper();
     }
-      else if (symbols && choice == 2){
-        password += randomSymbols()
+      else if (symbols && choice === 2){
+        password += randomSymbols();
       }
-      else if(numbers && choice == 3){
-        password += random(0,9)
+      else if(numbers && choice === 3){
+        password += random(0,9);
       }
       else{
-        i--
+        i--;
       }
       
     }
   setPassword(password)
-}
+};
 
   const random = (min =0, max = 1) => {
     return Math.floor(Math.random() * (max + 1 - min) + min)
@@ -65,9 +68,10 @@ function App() {
     return symbols[random(0, symbols.length - 1)];
   };
   
-  useEffect ( () =>{
-    generatePassword(), []
-  })
+  useEffect(() => {
+    generatePassword();
+  }, []); 
+  
 
 
   return (
@@ -110,7 +114,7 @@ function App() {
       </div>
 
       <div>
-        {error.length && <div className='erorr'> {error}</div>}
+        {error.length && <div className='error'> {error}</div>}
       </div>
       <div  className='button'>
         <input type = "submit" name = "generate" value="Generate" onClick={generatePassword}></input>
